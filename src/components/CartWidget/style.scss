@@ -1,0 +1,10 @@
+@import "../../scss/_variables.scss";
+
+
+.menu-icon{
+    position: absolute;
+    right: 1rem;
+    font-size: 1.5rem;
+    background-color: $background-color;
+    cursor: pointer;
+}

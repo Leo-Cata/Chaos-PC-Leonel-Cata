@@ -1,8 +1,9 @@
-import React from 'react'
-
+import React from 'react';
+import {TiShoppingCart} from "react-icons/ti";
+import "./style.scss";
 const CartWidget = () => {
     return (
-        <div>CartWidget</div>
+        <TiShoppingCart className='menu-icon'/>
     )
 }
 
