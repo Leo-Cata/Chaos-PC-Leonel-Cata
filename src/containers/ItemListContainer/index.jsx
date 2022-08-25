@@ -1,10 +1,9 @@
 import React from 'react'
+import "./styles.scss"
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({placeholder}) => {
     return (
-    <div>
-        <h1>{greeting}</h1>
-    </div>
+        <h2 className='placeholder'>{placeholder}</h2>
     )
 }
 

@@ -5,25 +5,25 @@
   align-items: center;
   color: #F5F5F5;
   padding: 0 10%;
-  background-color: #2E2E59;
+  background-color: #16161F;
   font-family: "Libre Franklin", sans-serif;
 }
 
 .menu-title {
-  background-color: #2E2E59;
+  background-color: #16161F;
 }
 
 .menu-links {
   display: inline-block;
   padding: 0 30px;
   list-style: none;
-  background-color: #2E2E59;
+  background-color: #16161F;
 }
 
 a {
   color: #F5F5F5;
   text-decoration: none;
-  background-color: #2E2E59;
+  background-color: #16161F;
 }
 
 a:hover {

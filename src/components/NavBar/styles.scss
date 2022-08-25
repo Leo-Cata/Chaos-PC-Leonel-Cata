@@ -6,23 +6,23 @@
     align-items: center;
     color: $text-color;
     padding: 0 10%;
-    background-color: $background-color;
+    background-color: $nav-color;
     font-family: $font;
 }
 .menu-title{
-    background-color: $background-color;
+    background-color: $nav-color;
 }
 .menu-links{
     display: inline-block;
     padding: 0 30px;
     list-style: none;
-    background-color: $background-color;
+    background-color: $nav-color;
 
 }
 a{
     color: $text-color;
     text-decoration: none;
-    background-color: $background-color;
+    background-color: $nav-color;
 }
 a:hover{
     color: $hover-color;
