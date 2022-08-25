@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+// font-family: 'Libre Franklin', sans-serif;
+$font:'Libre Franklin', sans-serif;
+$background-color: #2E2E59;
+$text-color: #F5F5F5;
+$nav-color: #2E2E59;
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text-color;
+    padding: 0 10%;
+    background-color: $background-color;
+    font-family: $font;
+}
+.menu-title{
+    background-color: $background-color;
+}
+.menu-links{
+    display: inline-block;
+    padding: 0 30px;
+    list-style: none;
+    background-color: $background-color;
+
+}
+a{
+    color: $text-color;
+    text-decoration: none;
+    background-color: $background-color;
+}
