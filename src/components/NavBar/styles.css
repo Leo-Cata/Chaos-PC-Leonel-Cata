@@ -24,4 +24,8 @@ a {
   color: #F5F5F5;
   text-decoration: none;
   background-color: #2E2E59;
+}
+
+a:hover {
+  color: #bababa;
 }/*# sourceMappingURL=styles.css.map */

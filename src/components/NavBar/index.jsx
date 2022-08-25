@@ -1,12 +1,10 @@
 import React from 'react'
 import "./styles.scss"
 
-const NavBar = ({categories, temp}) => {
-  
-
+const NavBar = ({brand}) => {
   return (
     <div className='menu'>
-      <h1 className='menu-title'>Brand Name</h1>
+      <h1 className='menu-title'>{brand}</h1>
 
       <ul className='menu-items'>
         <li className='menu-links'>
