@@ -1,0 +1,29 @@
+@import "../../scss/_variables.scss";
+
+.card{
+    box-shadow: 0 4px 8px 0px black;
+    width: 30%;
+    margin: 2rem auto;
+    height: auto;
+    background-color: $card-bg;
+
+}
+
+
+.cardTitle, .cardDesc, .cardPrice, .cardStock{
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    font-family: $font;
+    background-color: $card-bg;
+
+}
+
+.cardImg{
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    background-color: $card-bg;
+}
