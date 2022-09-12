@@ -1,0 +1,35 @@
+@import "../../scss/variables";
+
+.detail{
+    color: $text-color;
+    font-family: $font;
+    width: 60%;
+    padding: 1rem;
+    display: flex;
+    margin: 5rem auto;
+    border: 2px solid $border-color;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
+    background-color: $card-bg;
+}
+
+.detail-title, .detail-img, .detail-desc, .detail-texts, .detail-price{
+    padding: 1rem;
+    background-color: $card-bg;
+}
+.detail-img{
+    width: 70%;
+    height: fit-content;
+}
+
+.detail-desc{
+    margin: 0 auto;
+}
+.detail-texts{
+    width: 40%;
+}
+
+.detail-price{
+    display: flex;
+    justify-content: center;
+}

@@ -18,18 +18,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
             SetCount(count-1)
         }
     }
-
-    //montaje del componente
-    // useEffect(()=>{
-    //     //empty dependency array, ejecuta cuando se monta el component por unica vez
-    //     console.log("itemCount montado");
-    // }, [])
-
-    // //la afuncion callback dentro del useeffect se ejecuta cuando se monte el componente y cfuando se actualize el valor del count
-    // useEffect(()=>{
-    //     console.log("actualizado")
-    // },[count])
-
     return (
     <div className='button'>
         <button className='buttonColor' onClick={handleSubtract}>-</button>

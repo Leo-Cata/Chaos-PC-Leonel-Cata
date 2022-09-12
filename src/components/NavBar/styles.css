@@ -3,27 +3,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #F5F5F5;
+  color: white;
   padding: 0 10%;
-  background-color: #16161F;
+  background-color: #1a1b27;
   font-family: "Libre Franklin", sans-serif;
 }
 
 .menu-title {
-  background-color: #16161F;
+  background-color: #1a1b27;
 }
 
 .menu-links {
   display: inline-block;
   padding: 0 30px;
   list-style: none;
-  background-color: #16161F;
+  background-color: #1a1b27;
 }
 
 a {
-  color: #F5F5F5;
+  color: white;
   text-decoration: none;
-  background-color: #16161F;
+  background-color: #1a1b27;
 }
 
 a:hover {

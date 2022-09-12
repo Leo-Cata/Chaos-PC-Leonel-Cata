@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $text-color;
+    color: $nav-text;
     padding: 0 10%;
     background-color: $nav-color;
     font-family: $font;
@@ -20,7 +20,7 @@
 
 }
 a{
-    color: $text-color;
+    color: $nav-text;
     text-decoration: none;
     background-color: $nav-color;
 }

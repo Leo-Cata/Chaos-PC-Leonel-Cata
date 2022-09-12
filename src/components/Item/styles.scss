@@ -1,12 +1,10 @@
 @import "../../scss/_variables.scss";
 
 .card{
-    box-shadow: 0 4px 8px 0px black;
     width: 30%;
-    margin: 2rem auto;
     height: auto;
     background-color: $card-bg;
-
+    border: 1px solid $border-color;
 }
 
 

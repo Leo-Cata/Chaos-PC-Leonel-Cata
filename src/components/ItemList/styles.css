@@ -1,1 +1,8 @@
-/*# sourceMappingURL=styles.css.map */
+.stuff {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 80%;
+  height: 90vh;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */
