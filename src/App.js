@@ -1,29 +1,29 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import ItemListContainer from "./containers/ItemListContainer";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import NotFound from "./components/NotFound";
+// import ItemListContainer from "./containers/ItemListContainer";
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
+// import NotFound from "./components/NotFound";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 
 function App() {
   const brandName = "Chaos PC";
   return (
-    <BrowserRouter>
-      <NavBar 
-        brand ={brandName}
-      />
-      {/* <Routes>
-        <Route path="/" element={<ItemListContainer/>}/>
-        <Route path="/category/:categoryId" element={<ItemListContainer/>} />
-        <Route path="/detail/:productId" element={<ItemDetailContainer/> } />
-        <Route path="*" element={<NotFound/>} />
-      </Routes> */}
+    <>
+      <NavBar brand ={brandName}/>
       <ItemDetailContainer/>
-      </BrowserRouter>
+      </>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<ItemListContainer/>}/>
+    //     <Route path="/category/:categoryId" element={<ItemListContainer/>} />
+    //     <Route path="/detail/:productId" element={<ItemDetailContainer/> } />
+    //     <Route path="*" element={<NotFound/>} />
+    //   </Routes>
+    //   </BrowserRouter>
   );
 }
 
