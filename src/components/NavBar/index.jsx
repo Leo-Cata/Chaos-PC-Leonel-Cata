@@ -6,15 +6,22 @@ import { Link } from 'react-router-dom';
 const NavBar = ({brand}) => {
   return (
     <div className='menu'>
-      <h1 className='menu-title'>{brand}</h1>
+      <Link to="/">
+        <h1 className='menu-title'>{brand}</h1>
+      </Link>
 
       <ul className='menu-items'>
         <li className='menu-links'>
-          <Link to="/">Hardware</Link> 
+          <Link to="/category/CPU">CPU</Link> 
         </li>
-
         <li className='menu-links'>
-          <Link to="/">Perifericos</Link>
+          <Link to="/category/GPU">GPU</Link> 
+        </li>
+        <li className='menu-links'>
+          <Link to="/category/motherboard">Motherboard</Link> 
+        </li>
+        <li className='menu-links'>
+          <Link to="/category/ram">Ram</Link> 
         </li>
       </ul>
 

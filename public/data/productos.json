@@ -1,0 +1,37 @@
+[{
+        "id": 1,
+        "description": "6 Nucleos, 12 Hilos, 4.7GHz Reloj Base",
+        "name": "AMD Ryzen 5 7600x",
+        "stock": 10,
+        "price": 63.345,
+        "img": "/img/ryzen.png",
+        "category": "CPU"
+    },
+    {
+        "id": 2,
+        "description": "Las tarjetas gráficas GeForce RTX™ 3080 ofrecen el alto rendimiento que buscan los gamers. Basado en Ampere, la segunda generación de la arquitectura RTX de NVIDIA, cuentan con Núcleos RT mejorados y Núcleos Tensor, nuevos multiprocesadores de transmisión y memorias GDDR6X súper rápidas, para una experiencia de juego simplemente increíble.",
+        "name": "Nvidia RTX 3080",
+        "stock": 2,
+        "price": 150.000,
+        "img": "/img/geforce_rtx_3080.png",
+        "category": "GPU"
+    },
+    {
+        "id": 3,
+        "description": "Las placas base de la serie ASUS Prime B450 proporcionan un sólido fundamento para montar tu primer equipo y la flexibilidad necesaria para cuando tus ambiciones vayan a más. Esta serie de placas base combina lo mejor de los procesadores AMD Ryzen™ con tecnologías exclusivas de ASUS que incluyen ajustes automáticos del sistema, controles avanzados de refrigeración y sonido integrado inmersivo. Monta tu equipo de forma sencilla e inteligente con la serie ASUS Prime B450.",
+        "name": "ASUS PRIME B450M-A",
+        "stock": 4,
+        "price": 18.988,
+        "img": "/img/asus_prime-b450m.png",
+        "category": "motherboard"
+    },
+    {
+        "id": 4,
+        "description": "La memoria con overclocking DDR4 CORSAIR VENGEANCE RGB PRO Series ilumina el PC con un efecto hipnótico gracias a la iluminación dinámica RGB direccionable de forma individual, además de ofrecer las mejores características de las DDR4 en cuanto a rendimiento.",
+        "name": "Memoria RAM Vengeance RGB Pro gamer color negro 8GB",
+        "stock": 7,
+        "price": 10.690,
+        "img": "/img/ram.png",
+        "category": "ram"
+    }
+]

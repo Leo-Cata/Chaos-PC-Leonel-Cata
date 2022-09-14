@@ -4,7 +4,7 @@ import "./styles.scss"
 
 const ItemList = ({products}) => {
     return (
-        <div className='stuff'>
+        <div className='items'>
             {products.map(products =>{
                 return <Item key={products.id} products={products}/>
             })}

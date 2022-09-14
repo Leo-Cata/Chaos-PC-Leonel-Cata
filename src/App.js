@@ -1,12 +1,12 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-// import ItemListContainer from "./containers/ItemListContainer";
+import ItemListContainer from "./containers/ItemListContainer";
 import {
   BrowserRouter,
-  // Routes,
-  // Route,
+  Routes,
+  Route,
 } from "react-router-dom";
-// import NotFound from "./components/NotFound";
+import NotFound from "./components/NotFound";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 
 function App() {
@@ -16,13 +16,12 @@ function App() {
       <NavBar 
         brand ={brandName}
       />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<ItemListContainer/>}/>
         <Route path="/category/:categoryId" element={<ItemListContainer/>} />
         <Route path="/detail/:productId" element={<ItemDetailContainer/> } />
         <Route path="*" element={<NotFound/>} />
-      </Routes> */}
-      <ItemDetailContainer/>
+      </Routes>
       </BrowserRouter>
   );
 }
