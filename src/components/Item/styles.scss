@@ -2,7 +2,7 @@
 
 .card{
     width: 30%;
-    height: auto;
+    min-height: 400px;
     background-color: $card-bg;
     border: 1px solid $border-color;
 }
@@ -19,7 +19,7 @@
 }
 
 .cardImg{
-    width: 50%;
+    width: 30%;
     display: flex;
     margin: 0 auto;
     padding-top: 0.5rem;

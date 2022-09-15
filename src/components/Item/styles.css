@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap");
 .card {
   width: 30%;
-  height: auto;
+  min-height: 400px;
   background-color: #FFFFFF;
   border: 1px solid #4B0082;
 }
@@ -16,7 +16,7 @@
 }
 
 .cardImg {
-  width: 50%;
+  width: 30%;
   display: flex;
   margin: 0 auto;
   padding-top: 0.5rem;

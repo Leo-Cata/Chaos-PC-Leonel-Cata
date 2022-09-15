@@ -24,9 +24,8 @@ const ItemDetailContainer = () => {
             try {
                 const resp = await fetch('/data/productos.json')
                 const data = await resp.json();
-                const idFound = data.find(obj =>{return obj.id === productId});
+                const idFound = data.find(obj =>{return obj.id === parseInt(productId)});
                 setproductDetailId(idFound)
-                console.log(idFound, "asdasd")
             } catch (error) {
                 console.log(error);
             }

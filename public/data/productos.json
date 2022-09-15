@@ -1,6 +1,7 @@
 [{
-        "id": "1",
-        "description": "6 Nucleos, 12 Hilos, 4.7GHz Reloj Base",
+        "id": 1,
+        "description": "Los procesadores de la flamante serie AMD Ryzen 7000 están diseñados con toda la potencia y prestaciones de las últimas tecnologías para que armes tu PC sin esfuerzo. Entre sus puntos más destacados están la memoria DDR5, la interfaz PCIe® 5.0, el overclocking de memoria con un solo toque de AMD EXPO™ y la tecnología de fabricación supereficiente de 5 nm. Coloca una motherboard AMD con Socket AM5 en el corazón de tu equipo para dominar los juegos que amas tanto ahora como en el futuro. Si tu PC necesita las prestaciones más nuevas y potentes, tu solución son los procesadores AMD Ryzen™.",
+        "miniDesciption" :"6 Nucleos, 12 Hilos, 4.7GHz Reloj Base",
         "name": "AMD Ryzen 5 7600x",
         "stock": 10,
         "price": 63.345,
@@ -8,17 +9,19 @@
         "category": "CPU"
     },
     {
-        "id": "2",
+        "id": 2,
         "description": "Las tarjetas gráficas GeForce RTX™ 3080 ofrecen el alto rendimiento que buscan los gamers. Basado en Ampere, la segunda generación de la arquitectura RTX de NVIDIA, cuentan con Núcleos RT mejorados y Núcleos Tensor, nuevos multiprocesadores de transmisión y memorias GDDR6X súper rápidas, para una experiencia de juego simplemente increíble.",
+        "miniDesciption" :"9860 Núcleos CUDA, Frecuencia de 1,71GHz, Memoria VRAM de 12GB DDR6x",
         "name": "Nvidia RTX 3080",
         "stock": 2,
-        "price": 150.000,
+        "price": 150.321,
         "img": "/img/geforce_rtx_3080.png",
         "category": "GPU"
     },
     {
-        "id": "3",
+        "id": 3,
         "description": "Las placas base de la serie ASUS Prime B450 proporcionan un sólido fundamento para montar tu primer equipo y la flexibilidad necesaria para cuando tus ambiciones vayan a más. Esta serie de placas base combina lo mejor de los procesadores AMD Ryzen™ con tecnologías exclusivas de ASUS que incluyen ajustes automáticos del sistema, controles avanzados de refrigeración y sonido integrado inmersivo. Monta tu equipo de forma sencilla e inteligente con la serie ASUS Prime B450.",
+        "miniDesciption" :"Tarjeta madre AMD AM4 mATX con cabezales Aura Sync RGB, DDR4 3200MHz, M.2, HDMI 2.0b, SATA 6Gbps y USB 3.1 Gen 2",
         "name": "ASUS PRIME B450M-A",
         "stock": 4,
         "price": 18.988,
@@ -26,11 +29,12 @@
         "category": "motherboard"
     },
     {
-        "id": "4",
+        "id": 4,
         "description": "La memoria con overclocking DDR4 CORSAIR VENGEANCE RGB PRO Series ilumina el PC con un efecto hipnótico gracias a la iluminación dinámica RGB direccionable de forma individual, además de ofrecer las mejores características de las DDR4 en cuanto a rendimiento.",
-        "name": "Memoria RAM Vengeance RGB Pro gamer color negro 8GB",
+        "miniDesciption" :"Velocidad de 3600MHz, 8GB DDR4",
+        "name": "Memoria RAM Vengeance RGB Pro gamer color negro 8GB, CL16",
         "stock": 7,
-        "price": 10.690,
+        "price": 10.698,
         "img": "/img/ram.png",
         "category": "ram"
     }
