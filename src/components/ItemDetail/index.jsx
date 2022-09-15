@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemCount from '../ItemCount';
 import "./styles.scss"
 
 const ItemDetail = ({products}) => {
@@ -9,6 +10,7 @@ const ItemDetail = ({products}) => {
                 <h1 className='detail-title'>{products.name}</h1>
                 <p className='detail-desc'>{products.description}</p>
                 <p className="detail-price">${products.price}</p>
+            <ItemCount product={products}/>
             </div>
         </div>
     )

@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import "./style.scss"
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({product}) => {
     
-    const [count, SetCount] = useState(initial)
+    const [count, SetCount] = useState(0)
 
     const handleAdd = () =>{
-        if(count < stock){
+        if(count < product.stock){
         SetCount(count+1)
         }else{
             alert("No Hay Stock")
@@ -14,17 +14,21 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const handleSubtract = () =>{
-        if(count > initial){
+        if(count > 0){
             SetCount(count-1)
         }
     }
     return (
-    <div className='button'>
-        <button className='buttonColor' onClick={handleSubtract}>-</button>
-        <h3 className='buttonColor'>Cantidad: {count}</h3>
-        <button className='buttonColor' onClick={handleAdd}>+</button>
-        <button className='buttonBtn' onClick={()=>onAdd(count)}>Agregar Al Carrito</button>
-    </div>
+        <>
+            <div className='button'>
+            <button className='button-less' onClick={handleSubtract}>-</button>
+            <h3 className='button-count'>Cantidad: {count}</h3>
+            <button className='button-more' onClick={handleAdd}>+</button>
+            </div>
+            <div className="add">
+        <button className='button-add'>Agregar Al Carrito</button>
+        </div>
+    </>
     )
 }
 
