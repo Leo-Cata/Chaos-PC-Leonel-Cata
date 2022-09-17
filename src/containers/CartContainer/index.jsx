@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const CartContainer = () => {
-  return (
-    <div>WIP CartContainer Section</div>
-  )
-}
+  return <div>WIP CartContainer Section</div>;
+};
 
-export default CartContainer
+export default CartContainer;

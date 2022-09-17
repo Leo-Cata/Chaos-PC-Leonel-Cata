@@ -1,42 +1,35 @@
-import React from 'react'
-import {
-    useState
-} from 'react';
-import {
-    useEffect
-} from 'react';
-import {
-    useParams
-} from 'react-router-dom';
+import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail';
 
 const ItemDetailContainer = () => {
-    //gestiona la obtencion de la data del detalle
-    const [productDetailId, setproductDetailId] = useState({});
+  //gestiona la obtencion de la data del detalle
+  const [productDetailId, setproductDetailId] = useState({});
 
-    const {productId} = useParams();
+  const { productId } = useParams();
 
-    console.log(productId);
+  console.log(productId);
 
-    useEffect(() => {
-        const getProducs = async () => {
+  useEffect(() => {
+    const getProducs = async () => {
+      try {
+        const resp = await fetch('/data/productos.json');
+        const data = await resp.json();
+        const idFound = data.find((obj) => {
+          return obj.id === parseInt(productId);
+        });
+        setproductDetailId(idFound);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getProducs();
+  }, [productId]);
 
-            try {
-                const resp = await fetch('/data/productos.json')
-                const data = await resp.json();
-                const idFound = data.find(obj =>{return obj.id === parseInt(productId)});
-                setproductDetailId(idFound)
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getProducs();
-    }, [productId])
+  console.log(productDetailId);
+  return <ItemDetail products={productDetailId} />;
+};
 
-    console.log(productDetailId)
-    return ( 
-        <ItemDetail products={productDetailId}/>
-    )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

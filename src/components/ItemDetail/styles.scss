@@ -1,4 +1,5 @@
 @import "../../scss/variables";
+@import "../ItemCount/style.scss";
 
 .detail{
     color: $text-color;
@@ -32,4 +33,13 @@
 .detail-price{
     display: flex;
     justify-content: center;
+}
+
+.detail-btn{
+    display: flex;
+    margin: 0 auto;
+    @extend .button-add;
+}
+.detail-btn:hover{
+    @extend .button-add, :hover;
 }
