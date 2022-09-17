@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import "./style.scss"
 
-const ItemCount = ({product}) => {
+const ItemCount = ({product, onAdd, initial}) => {
     
-    const [count, SetCount] = useState(0)
+    const [count, SetCount] = useState(initial)
 
     const handleAdd = () =>{
         if(count < product.stock){
@@ -18,6 +18,11 @@ const ItemCount = ({product}) => {
             SetCount(count-1)
         }
     }
+
+    const addCart = () =>{
+        onAdd(count)
+        SetCount(initial)
+    }
     return (
         <>
             <div className='button'>
@@ -26,7 +31,7 @@ const ItemCount = ({product}) => {
             <button className='button-more' onClick={handleAdd}>+</button>
             </div>
             <div className="add">
-        <button className='button-add'>Agregar Al Carrito</button>
+        <button className='button-add' onClick={addCart}>Agregar Al Carrito</button>
         </div>
     </>
     )
