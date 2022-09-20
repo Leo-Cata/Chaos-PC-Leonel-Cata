@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CartCont } from '../../context/cartContext';
 import ItemCount from '../ItemCount';
 import './styles.scss';
 
 const ItemDetail = ({ products }) => {
+  const { addItem } = useContext(CartCont);
+
   const [qty, setQty] = useState(0);
 
   const addCart1 = (quantity) => {
@@ -12,6 +15,8 @@ const ItemDetail = ({ products }) => {
   };
 
   const handleToCart = () => {
+    const productForCart = { ...products, quantity: qty };
+    addItem(productForCart);
     navigate('/cart');
   };
 
