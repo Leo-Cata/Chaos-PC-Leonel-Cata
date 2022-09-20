@@ -6,9 +6,13 @@ import ItemList from '../../components/ItemList';
 import './styles.scss';
 
 const ItemListContainer = ({ placeholder }) => {
+  //gets categoryId as param for navigation
   const { categoryId } = useParams();
+
+  //products state
   const [productos, setProductos] = useState([]);
 
+  //fetches items, if there's smt in categoryId, fectches items from that category else shows everything
   useEffect(() => {
     (async () => {
       try {
@@ -29,7 +33,8 @@ const ItemListContainer = ({ placeholder }) => {
       }
     })();
   }, [categoryId]);
-  console.log(categoryId, 'asd', productos);
+  //updates when categoryId changes
+
   return (
     <div>
       <ItemList products={productos} />

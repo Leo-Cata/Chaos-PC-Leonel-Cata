@@ -5,23 +5,28 @@ import { CartCont } from '../../context/cartContext';
 import ItemCount from '../ItemCount';
 import './styles.scss';
 
+//gets products from props
 const ItemDetail = ({ products }) => {
+  //get addItem context
   const { addItem } = useContext(CartCont);
 
+  //qty state
   const [qty, setQty] = useState(0);
 
+  //passed as onAdd to itemCount, saves the qty of item for cart
   const addCart1 = (quantity) => {
     setQty(quantity);
   };
 
+  //when pressing finalizar compra, adds the qty to the state in cartContext and navs to cart
   const handleToCart = () => {
     const productForCart = { ...products, quantity: qty };
     addItem(productForCart);
     navigate('/cart');
   };
 
+  //navigate hook to go to /cart
   const navigate = useNavigate();
-  console.log('first', qty);
   return (
     <div className='detail'>
       <img className='detail-img' src={products.img} alt='producto' />

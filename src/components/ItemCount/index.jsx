@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './style.scss';
-
+//gets product, on add and initial from props
 const ItemCount = ({ product, onAdd, initial }) => {
+  //state to save qty of items
   const [count, SetCount] = useState(initial);
 
+  //if count is not higher than stock, add to count state, else alert
   const handleAdd = () => {
     if (count < product.stock) {
       SetCount(count + 1);
@@ -12,12 +14,14 @@ const ItemCount = ({ product, onAdd, initial }) => {
     }
   };
 
+  //if count is not less than 0, dont subtract
   const handleSubtract = () => {
     if (count > 0) {
       SetCount(count - 1);
     }
   };
 
+  //add count to the onAdd function for qty, setcount back to the initial value
   const addCart = () => {
     onAdd(count);
     SetCount(initial);

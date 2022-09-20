@@ -3,6 +3,7 @@ import CartWidget from '../CartWidget';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 
+//navbar, navigates to cagetories
 const NavBar = ({ brand }) => {
   return (
     <div className='menu'>

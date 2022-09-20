@@ -5,13 +5,13 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail';
 
 const ItemDetailContainer = () => {
-  //gestiona la obtencion de la data del detalle
+  //detailid state
   const [productDetailId, setproductDetailId] = useState({});
 
+  //params to get the product id
   const { productId } = useParams();
 
-  console.log(productId);
-
+  //effect to fetch json and return id of product and save it in the state. effects updates when productId changes
   useEffect(() => {
     const getProducs = async () => {
       try {
@@ -28,7 +28,6 @@ const ItemDetailContainer = () => {
     getProducs();
   }, [productId]);
 
-  console.log(productDetailId);
   return <ItemDetail products={productDetailId} />;
 };
 
