@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFound';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import CartContainer from './containers/CartContainer';
-import CartContext from './context/cartContext';
+import CartContext from './context/CartContext';
 
 function App() {
   const brandName = 'Chaos PC';

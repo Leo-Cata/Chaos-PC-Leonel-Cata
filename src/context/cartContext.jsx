@@ -14,7 +14,7 @@ const CartContext = ({ children }) => {
     const repeatedProduct = isInCart(item.id);
     if (repeatedProduct) {
       //if repeated, map for the product, check for id to be the same and add qty, return that, else add to cart state
-      const newCartQty = cart.map((product) => {
+      cart.map((product) => {
         if (product.id === item.id) {
           product.quantity += item.quantity;
           return product;
@@ -33,24 +33,20 @@ const CartContext = ({ children }) => {
   };
 
   //clear cart function
-  const clear = () => {
+  const clearItems = () => {
     setCart([]);
   };
-
   //remove from cart function
-  const removeItem = (itemId) => {
-    const itemIsFound = isInCart(itemId);
-
-    //if item is found, find the id thats equal to the passed id, index and remove
-    if (itemIsFound) {
-      const itemToRemove = cart.find((prod) => prod.id === itemId);
-      const itemToRemoveIndex = cart.indexOf(itemToRemove);
-      cart.splice(itemToRemoveIndex, 1);
-    }
+  const removeItem = (itemId) => () => {
+    //filters cart which returns all items which id isnt the same as itemId then set to state
+    const filteredProds = cart.filter((item) => item.id !== itemId);
+    setCart(filteredProds);
   };
 
   return (
-    <CartCont.Provider value={{ cart, addItem }}>{children}</CartCont.Provider>
+    <CartCont.Provider value={{ cart, addItem, removeItem, clearItems }}>
+      {children}
+    </CartCont.Provider>
   );
 };
 

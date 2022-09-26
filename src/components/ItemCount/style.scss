@@ -30,7 +30,7 @@
     background-color: white;
     color: black;
 }
-.button-add:hover{
+.button-add:hover, .button-less:hover, .button-more:hover{
     cursor: pointer;
     color: white;
     background-color: $border-color;

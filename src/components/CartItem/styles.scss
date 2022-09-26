@@ -1,0 +1,24 @@
+@import "../../scss/variables";
+@import "../ItemCount/style.scss";
+
+.cartItem{
+  display: flex;
+  margin: 0 auto;
+  font-family: $font;
+  width: 90%;
+  padding: 3rem;
+}
+.cartImg{
+  width: 150px;
+}
+.cartName, .cartQuantity, .cartPrice, .cartRemoveSpace{
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.cartRemove{
+  @extend .button-add;
+}
