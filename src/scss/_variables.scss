@@ -7,3 +7,19 @@ $text-color: black;
 $hover-color: #bababa;
 $card-bg: #FFFFFF; 
 $border-color: #4B0082;
+
+.button-Styles{
+  font-size: 1.5rem;
+    font-family: $font;
+    border-style: none;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+    color: black;
+}
+.button-Styles:hover{
+  cursor: pointer;
+    color: white;
+    background-color: $border-color;
+}

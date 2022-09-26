@@ -1,5 +1,4 @@
 @import "../../scss/variables";
-@import "../ItemCount/style.scss";
 
 .cartItem{
   display: flex;
@@ -20,5 +19,5 @@
 }
 
 .cartRemove{
-  @extend .button-add;
+  @extend .button-Styles;
 }
