@@ -15,13 +15,15 @@ const CartContainer = () => {
   //get items in cart and map them and send them to CartItem
   return (
     <div>
+      <button className='cart-Clear' onClick={clearItems}>
+        Vaciar El Carrito
+      </button>
       {cart.length ? (
-        ((<button onClick={clearItems}>asdasd</button>),
         cart.map((cartProds) => {
           return <CartItem key={cartProds.id} cartProds={cartProds} />;
-        }))
+        })
       ) : (
-        <div className='cartNav'>
+        <div className='cart-Nav'>
           <h1 className='cart-Empty'>Tu Carrito Esta Vacio</h1>
           <button className='cartNavButton' onClick={handleNav}>
             Volver Al Inicio

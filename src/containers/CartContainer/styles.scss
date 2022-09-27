@@ -1,6 +1,6 @@
 @import "../../scss/variables";
 
-.cartNav{
+.cart-Nav{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,12 @@
   font-family: $font;
   padding: 1rem
 }
-.cartNavButton{
+.cartNavButton, .cart-Clear{
   @extend .button-Styles;
+}
+
+.cart-Clear{
+  margin: 1rem;
+  position: absolute;
+  right: 0;
 }
