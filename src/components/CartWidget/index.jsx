@@ -15,7 +15,8 @@ const CartWidget = () => {
 
   //cart context to get the amount of items in the cart
   const { cart } = useContext(CartCont);
-
+  console.log(cart, 'from widget');
+  console.log(cart.quantity, 'from widgetasdasd');
   //if cart has any length render count and cart, else empty
   return (
     <div className='menu-Icon'>

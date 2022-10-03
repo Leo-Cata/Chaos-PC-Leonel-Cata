@@ -43,8 +43,19 @@ const CartContext = ({ children }) => {
     setCart(filteredProds);
   };
 
+  //iterates through the array,  multiplies the qty * price of the product + previous value in acc, initial acc value is 0
+  const totalPrice = () => {
+    const total = cart.reduce(
+      (acc, product) => (acc += product.quantity * product.price),
+      0,
+    );
+    console.log(total);
+    return total;
+  };
+
   return (
-    <CartCont.Provider value={{ cart, addItem, removeItem, clearItems }}>
+    <CartCont.Provider
+      value={{ cart, addItem, removeItem, clearItems, totalPrice }}>
       {children}
     </CartCont.Provider>
   );
