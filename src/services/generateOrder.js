@@ -6,10 +6,10 @@ const generateOrder = (name, email, phone, cart, total) => {
       name: name,
       email: email,
       phone: phone,
+      items: cart,
+      total: total,
+      createdTime: new Date().toLocaleString(),
     },
-    items: cart,
-    total: total,
-    createdTime: new Date().toLocaleString(),
   };
 };
 

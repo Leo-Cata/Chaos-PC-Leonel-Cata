@@ -6,6 +6,7 @@ import NotFound from './components/NotFound';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import CartContainer from './containers/CartContainer';
 import CartContext from './context/CartContext';
+import FormDataContainer from './containers/FormDataContainer';
 
 function App() {
   const brandName = 'Chaos PC';
@@ -19,6 +20,7 @@ function App() {
           <Route path='/detail/:productId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartContainer />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/form' element={<FormDataContainer />} />
         </Routes>
       </BrowserRouter>
     </CartContext>
