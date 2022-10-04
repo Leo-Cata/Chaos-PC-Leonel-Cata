@@ -11,7 +11,7 @@
   font-family: $font;
   padding: 1rem
 }
-.cartNavButton, .cart-Clear{
+.cartNavButton, .cart-Clear, .cart-Finish{
   @extend .button-Styles;
 }
 
@@ -19,4 +19,8 @@
   margin: 1rem;
   position: absolute;
   right: 0;
+}
+
+.cart-Finish{
+  margin: 1rem;
 }

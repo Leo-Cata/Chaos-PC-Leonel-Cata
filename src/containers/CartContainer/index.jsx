@@ -51,7 +51,9 @@ const CartContainer = () => {
           <button className='cart-Clear' onClick={clearItems}>
             Vaciar El Carrito
           </button>
-          <button onClick={handleFormNav}>Terminar Compra</button>
+          <button onClick={handleFormNav} className='cart-Finish'>
+            Terminar Compra
+          </button>
           {cart.map((cartProds) => {
             return <CartItem key={cartProds.id} cartProds={cartProds} />;
           })}
