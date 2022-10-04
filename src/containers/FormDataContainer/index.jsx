@@ -1,11 +1,13 @@
 import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartCont } from '../../context/CartContext';
 import { db } from '../../firebase/config';
 import generateOrder from '../../services/generateOrder';
 import './styles.scss';
 
 const FormData = () => {
+  const nav = useNavigate();
   const { cart, totalPrice, clearItems } = useContext(CartCont);
   const total = totalPrice();
   const [orderData, setOrderData] = useState({
@@ -51,6 +53,7 @@ const FormData = () => {
     clearItems();
     console.log(orderData);
     alert('Compra Realizada, ID: ' + docRef.id);
+    nav('/');
   };
 
   return (
