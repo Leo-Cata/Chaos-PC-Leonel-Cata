@@ -31,15 +31,14 @@ const FormData = () => {
       total,
     );
 
-    console.log('cart stuff', cart, 'data stuff', orderData);
     // adds order documento to the database, on the "orders" collection
     const docRef = await addDoc(collection(db, 'orders'), order);
-    console.log('Document written with ID: ', docRef.id);
 
     //go throught each item in cart
     cart.forEach(async (productInCart) => {
       //get a reference of products that matches productInCart.id
       const productRef = doc(db, 'products', productInCart.id);
+
       //snapshot that
       const productSnap = await getDoc(productRef);
       //updateDoc the stock equal to the stock in firebase minuus the quantity of items in the cart for that given id

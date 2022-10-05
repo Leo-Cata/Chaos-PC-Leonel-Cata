@@ -34,7 +34,6 @@ const ItemDetailContainer = () => {
         console.log(error);
       }
     };
-    console.log(productId, 'ASDASDASD');
     getProducs();
   }, [productId]);
 

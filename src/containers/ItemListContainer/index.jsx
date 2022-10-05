@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../../components/ItemList';
-// import ItemCount from '../../components/ItemCount';
 import './styles.scss';
 import { db } from '../../firebase/config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
-const ItemListContainer = ({ placeholder }) => {
+const ItemListContainer = () => {
   //gets categoryId as param for navigation
   const { categoryId } = useParams();
   //products state
@@ -29,12 +28,10 @@ const ItemListContainer = ({ placeholder }) => {
         const querySnapshot = await getDocs(q);
         //se obtiene el "snapshot" con los datos crudos
         const productosFirebase = [];
+
         querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, ' => ', doc.data());
           productosFirebase.push({ id: doc.id, ...doc.data() });
         });
-        console.log(productosFirebase);
         setProductos(productosFirebase);
       } catch (error) {
         console.log(error);
