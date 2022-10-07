@@ -49,7 +49,6 @@ const CartContext = ({ children }) => {
       (acc, product) => (acc += product.quantity * product.price),
       0,
     );
-    console.log(total);
     return total;
   };
 

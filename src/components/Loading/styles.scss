@@ -1,0 +1,19 @@
+.spinner{
+  animation: Spinner 1s linear infinite;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  color: #414141;
+}
+
+@keyframes Spinner{
+  0%{transform:rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+.spinner-Container{
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+}

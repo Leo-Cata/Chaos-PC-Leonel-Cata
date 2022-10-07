@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail';
 import { db } from '../../firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
+import Loading from '../../components/Loading';
 
 const ItemDetailContainer = () => {
   //detailid state
@@ -37,7 +38,16 @@ const ItemDetailContainer = () => {
     getProducs();
   }, [productId]);
 
-  return <ItemDetail products={productDetailId} />;
+  //if there's an ID in productDetailId = render itemDetail else loading
+  return (
+    <div>
+      {productDetailId.id ? (
+        <ItemDetail products={productDetailId} />
+      ) : (
+        <Loading />
+      )}
+    </div>
+  );
 };
 
 export default ItemDetailContainer;

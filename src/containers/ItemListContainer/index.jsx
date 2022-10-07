@@ -5,6 +5,7 @@ import ItemList from '../../components/ItemList';
 import './styles.scss';
 import { db } from '../../firebase/config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import Loading from '../../components/Loading';
 
 const ItemListContainer = () => {
   //gets categoryId as param for navigation
@@ -40,9 +41,10 @@ const ItemListContainer = () => {
   }, [categoryId]);
   //updates when categoryId changes
 
+  //if there is stuff in productos aka truty = render item list, else loading
   return (
     <div>
-      <ItemList products={productos} />
+      {productos.length ? <ItemList products={productos} /> : <Loading />}
     </div>
   );
 };
