@@ -52,9 +52,15 @@ const CartContext = ({ children }) => {
     return total;
   };
 
+  //for each object in cart. and add the quantity to acc
+  const totalItems = cart.reduce(
+    (acc, products) => (acc += products.quantity),
+    0,
+  );
+
   return (
     <CartCont.Provider
-      value={{ cart, addItem, removeItem, clearItems, totalPrice }}>
+      value={{ cart, addItem, removeItem, clearItems, totalPrice, totalItems }}>
       {children}
     </CartCont.Provider>
   );

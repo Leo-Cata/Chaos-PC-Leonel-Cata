@@ -13,15 +13,15 @@ const CartWidget = () => {
     nav(`/cart`);
   };
 
-  //TODO: WIDGET WITH AMOUNT OF TOTAL ITEMS
   //cart context to get the amount of items in the cart
-  const { cart } = useContext(CartCont);
+  const { cart, totalItems } = useContext(CartCont);
+
   //if cart has any length render count and cart, else empty
   return (
     <div className='menu-Icon'>
       {cart.length ? (
         <>
-          <p className='menu-Count'>{cart.length}</p>
+          <p className='menu-Count'>{totalItems}</p>
           <TiShoppingCart className='menu-Items' onClick={handleNav} />
         </>
       ) : (
