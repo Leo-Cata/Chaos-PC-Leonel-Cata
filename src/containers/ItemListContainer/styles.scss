@@ -1,13 +1,5 @@
 @import "../../scss/_variables";
 
-
-.placeholder{
-    display: flex;
-    width: 100%;
-    height: 96vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $text-color;
-    font-family: $font;
+.cards-Container{
+    height: 100%;
 }

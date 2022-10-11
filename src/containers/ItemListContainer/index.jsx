@@ -43,7 +43,7 @@ const ItemListContainer = () => {
 
   //if there is stuff in productos aka truty = render item list, else loading
   return (
-    <div>
+    <div className='cards-Container'>
       {productos.length ? <ItemList products={productos} /> : <Loading />}
     </div>
   );
