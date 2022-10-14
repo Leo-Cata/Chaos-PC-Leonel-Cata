@@ -5,6 +5,7 @@ import { CartCont } from '../../context/CartContext';
 import { db } from '../../firebase/config';
 import generateOrder from '../../services/generateOrder';
 import './styles.scss';
+import Swal from 'sweetalert2';
 
 const FormData = () => {
   const nav = useNavigate();
@@ -21,6 +22,7 @@ const FormData = () => {
     //spread orderData, get the name of elemented targeted(for name="name" will set name, for name="email" will set email) and get the value of those inputs, then save it
     setOrderData({ ...orderData, [element.target.name]: element.target.value });
   };
+
   const handleBuy = async (element) => {
     element.preventDefault();
     const order = generateOrder(
@@ -50,8 +52,23 @@ const FormData = () => {
     setOrderData({});
     //cleans the cart
     clearItems();
-    console.log(orderData);
-    alert('Compra Realizada, ID: ' + docRef.id);
+
+    //IIFE function, show alert after processing purchase
+    (() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Muchas Gracias Por Su Compra',
+        text: 'ID De Su Compra: ' + docRef.id,
+        showConfirmButton: true,
+        confirmButtonText: 'aceptar',
+        confirmButtonColor: '#4B0082',
+        customClass: {
+          container: 'swal-Container',
+          title: 'swal-Title',
+          htmlContainer: 'swal-Text',
+        },
+      });
+    })();
     nav('/');
   };
 

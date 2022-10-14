@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import './style.scss';
+import Swal from 'sweetalert2';
 //gets product, on add and initial from props
 const ItemCount = ({ product, onAdd, initial }) => {
   //state to save qty of items
   const [count, SetCount] = useState(initial);
+
+  const sweetAlert = () => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Lo Sentimos',
+      text: 'No Hay Stock Suficiente',
+      showConfirmButton: true,
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#4B0082',
+      customClass: {
+        icon: 'swal-Icon',
+        title: 'swal-Title',
+        htmlContainer: 'swal-Text',
+      },
+    });
+  };
 
   //if count is not higher than stock, add to count state, else alert
   const handleAdd = () => {
     if (count < product.stock) {
       SetCount(count + 1);
     } else {
-      alert('No Hay Stock');
+      sweetAlert();
     }
   };
 

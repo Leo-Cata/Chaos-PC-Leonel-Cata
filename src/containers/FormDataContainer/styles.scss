@@ -23,3 +23,9 @@
 .form-Button{
   @extend .button-Styles;
 }
+
+.swal-Container{
+  background-color: $card-bg;
+  font-family: $font;
+}
+

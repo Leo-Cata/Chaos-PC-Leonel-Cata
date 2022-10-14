@@ -34,5 +34,13 @@
     cursor: pointer;
     color: white;
     background-color: $border-color;
-    
+}
+
+.swal-Title, .swal-Text, .swal2-actions{
+    background-color: $card-bg;
+    font-family: $font;
+}
+.swal2-x-mark{
+    border-radius: 50%;
+    background-color: $card-bg;
 }
