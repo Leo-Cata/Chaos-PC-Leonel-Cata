@@ -1,17 +1,18 @@
 @import "/src/scss/variables";
+
 .button{
     display: flex;
     justify-content: center;
     background-color: $card-bg;
 }
 
-.button-less, .button-more{
-    width: 1rem;
-    background-color: $card-bg;
-    border-style: none;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-}
+// .button-less, .button-more{
+//     width: 1rem;
+//     background-color: $card-bg;
+//     border-style: none;
+//     border: 2px solid $border-color;
+//     border-radius: 5px;
+// }
 
 .add{
     display: flex;
@@ -20,20 +21,8 @@
     margin: 1rem;
 }
 
-.button-add, .button-count{
-    font-size: 1.5rem;
-    font-family: $font;
-    border-style: none;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    padding: 3px;
-    background-color: white;
-    color: black;
-}
-.button-add:hover, .button-less:hover, .button-more:hover{
-    cursor: pointer;
-    color: white;
-    background-color: $border-color;
+.button-add, .button-count, .button-less, .button-more{
+    @extend .button-Styles;
 }
 
 .swal-Title, .swal-Text, .swal2-actions{

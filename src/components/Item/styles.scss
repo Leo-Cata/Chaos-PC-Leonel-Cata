@@ -1,12 +1,15 @@
 @import "../../scss/_variables.scss";
 
 .card{
-    width: 30%;
-    min-height: 400px;
     background-color: $card-bg;
-    border: 1px solid $border-color;
+    border: 3px solid $border-color;
+    border-radius: 1rem;
     transition: transform 0.3s;
-    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
 }
 .card:hover{
     cursor: pointer;
@@ -14,20 +17,19 @@
 }
 
 
-.cardTitle, .cardDesc, .cardPrice, .cardStock{
+.card-Title, .card-Price{
     color: $text-color;
     display: flex;
     justify-content: center;
-    padding: 0.5rem;
     font-family: $font;
     background-color: $card-bg;
-
+    text-align: center;
+    padding: 0.5rem;
 }
 
-.cardImg{
+.card-Img{
     width: 30%;
     display: flex;
     margin: 0 auto;
-    padding-top: 0.5rem;
     background-color: $card-bg;
 }

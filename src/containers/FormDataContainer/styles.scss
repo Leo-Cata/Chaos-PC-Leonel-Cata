@@ -27,5 +27,13 @@
 .swal-Container{
   background-color: $card-bg;
   font-family: $font;
+  font-weight: 500;
 }
 
+.form-Total, .form-Title{
+  display: flex;
+  justify-content: center;
+  font-family: $font;
+  font-size: 2rem;
+  font-weight: 400;
+}

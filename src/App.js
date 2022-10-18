@@ -11,8 +11,8 @@ import FormDataContainer from './containers/FormDataContainer';
 function App() {
   const brandName = 'Chaos PC';
   return (
-    <CartContext>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartContext>
         <NavBar brand={brandName} />
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
@@ -22,8 +22,8 @@ function App() {
           <Route path='*' element={<NotFound />} />
           <Route path='/form' element={<FormDataContainer />} />
         </Routes>
-      </BrowserRouter>
-    </CartContext>
+      </CartContext>
+    </BrowserRouter>
   );
 }
 

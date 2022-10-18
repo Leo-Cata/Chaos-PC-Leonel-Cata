@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //create context to export to app.js
 export const CartCont = createContext([]);
@@ -57,10 +58,23 @@ const CartContext = ({ children }) => {
     (acc, products) => (acc += products.quantity),
     0,
   );
+  const nav = useNavigate();
+
+  const handleNavMain = () => {
+    nav('/');
+  };
 
   return (
     <CartCont.Provider
-      value={{ cart, addItem, removeItem, clearItems, totalPrice, totalItems }}>
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        clearItems,
+        totalPrice,
+        totalItems,
+        handleNavMain,
+      }}>
       {children}
     </CartCont.Provider>
   );

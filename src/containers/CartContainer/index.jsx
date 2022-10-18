@@ -7,12 +7,9 @@ import { CartCont } from '../../context/CartContext';
 import './styles.scss';
 
 const CartContainer = () => {
-  const { cart, clearItems } = useContext(CartCont);
+  const { cart, clearItems, handleNavMain } = useContext(CartCont);
 
   const nav = useNavigate();
-  const handleNav = () => {
-    nav(`/`);
-  };
 
   const handleFormNav = () => {
     nav(`/form`);
@@ -35,7 +32,7 @@ const CartContainer = () => {
       ) : (
         <div className='cart-Nav'>
           <h1 className='cart-Empty'>Tu Carrito Esta Vacio</h1>
-          <button className='cartNavButton' onClick={handleNav}>
+          <button className='cartNavButton' onClick={handleNavMain}>
             Volver Al Inicio
           </button>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail';
 import { db } from '../../firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
@@ -13,6 +13,7 @@ const ItemDetailContainer = () => {
 
   //params to get the product id
   const { productId } = useParams();
+  const nav = useNavigate();
 
   //effect to fetch json and return id of product and save it in the state. effects updates when productId changes
   useEffect(() => {
@@ -28,15 +29,14 @@ const ItemDetailContainer = () => {
           //setear como id el id del docSnap y un spread a la data del docSnap asi se guarda en 1 solo objeto
           setproductDetailId({ id: docSnap.id, ...docSnap.data() });
         } else {
-          // doc.data() will be undefined in this case
-          console.log('No such document!');
+          nav('*');
         }
       } catch (error) {
         console.log(error);
       }
     };
     getProducs();
-  }, [productId]);
+  }, [productId, nav]);
 
   //if there's an ID in productDetailId = render itemDetail else loading
   return (

@@ -17,7 +17,6 @@ const ItemDetail = ({ products }) => {
   const addCart1 = (quantity) => {
     setQty(quantity);
   };
-
   //when pressing finalizar compra, adds the qty to the state in cartContext and navs to cart
   const handleToCart = () => {
     const productForCart = { ...products, quantity: qty };
@@ -29,15 +28,16 @@ const ItemDetail = ({ products }) => {
   const navigate = useNavigate();
   return (
     <div className='detail'>
-      <img className='detail-img' src={products.img} alt='producto' />
-      <div className='detail-texts'>
-        <h1 className='detail-title'>{products.name}</h1>
-        <p className='detail-desc'>{products.description}</p>
-        <p className='detail-price'>${products.price}</p>
+      <img className='detail-Img' src={products.img} alt='producto' />
+      <div className='detail-Texts'>
+        <h1 className='detail-Title'>{products.name}</h1>
+        <p className='detail-Desc'>{products.description}</p>
+        <p className='detail-Price'>${products.price}</p>
+        <p className='detail-Stock'>Unidades Disponibles: {products.stock}</p>
         {!qty ? (
           <ItemCount product={products} onAdd={addCart1} initial={1} />
         ) : (
-          <button className='detail-btn' onClick={handleToCart}>
+          <button className='detail-Btn' onClick={handleToCart}>
             Finalizar Compra
           </button>
         )}

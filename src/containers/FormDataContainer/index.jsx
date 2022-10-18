@@ -25,65 +25,92 @@ const FormData = () => {
 
   const handleBuy = async (element) => {
     element.preventDefault();
-    const order = generateOrder(
-      orderData.name,
-      orderData.email,
-      orderData.phone,
-      cart,
-      total,
-    );
+    if (cart.length) {
+      const order = generateOrder(
+        orderData.name,
+        orderData.email,
+        orderData.phone,
+        cart,
+        total,
+      );
 
-    // adds order documento to the database, on the "orders" collection
-    const docRef = await addDoc(collection(db, 'orders'), order);
+      // adds order documento to the database, on the "orders" collection
+      const docRef = await addDoc(collection(db, 'orders'), order);
 
-    //go throught each item in cart
-    cart.forEach(async (productInCart) => {
-      //get a reference of products that matches productInCart.id
-      const productRef = doc(db, 'products', productInCart.id);
+      //go throught each item in cart
+      cart.forEach(async (productInCart) => {
+        //get a reference of products that matches productInCart.id
+        const productRef = doc(db, 'products', productInCart.id);
 
-      //snapshot that
-      const productSnap = await getDoc(productRef);
-      //updateDoc the stock equal to the stock in firebase minuus the quantity of items in the cart for that given id
-      await updateDoc(productRef, {
-        stock: productSnap.data().stock - productInCart.quantity,
+        //snapshot that
+        const productSnap = await getDoc(productRef);
+        //updateDoc the stock equal to the stock in firebase minuus the quantity of items in the cart for that given id
+        await updateDoc(productRef, {
+          stock: productSnap.data().stock - productInCart.quantity,
+        });
       });
-    });
-    //sets all the input info to the carts
-    setOrderData({});
-    //cleans the cart
-    clearItems();
+      //sets all the input info to the carts
+      setOrderData({});
+      //cleans the cart
+      clearItems();
 
-    //IIFE function, show alert after processing purchase
-    (() => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Muchas Gracias Por Su Compra',
-        text: 'ID De Su Compra: ' + docRef.id,
-        showConfirmButton: true,
-        confirmButtonText: 'aceptar',
-        confirmButtonColor: '#4B0082',
-        customClass: {
-          container: 'swal-Container',
-          title: 'swal-Title',
-          htmlContainer: 'swal-Text',
-        },
-      });
-    })();
-    nav('/');
+      //IIFE function, show alert after processing purchase
+      (() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Muchas Gracias Por Su Compra',
+          text: 'ID De Su Compra: ' + docRef.id,
+          showConfirmButton: true,
+          confirmButtonText: 'aceptar',
+          confirmButtonColor: '#4B0082',
+          customClass: {
+            container: 'swal-Container',
+            title: 'swal-Title',
+            htmlContainer: 'swal-Text',
+          },
+        });
+      })();
+      nav('/');
+    } else {
+      (() => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Tu Carrito Esta Vacio',
+          customClass: {
+            container: 'swal-Container',
+            title: 'swal-Title',
+          },
+        });
+      })();
+    }
   };
 
   return (
     <form onSubmit={handleBuy} className='form'>
+      <label>
+        <h2 className='form-Title'>
+          Ingrese Sus Datos Para Finalizar La Compra
+        </h2>
+        <h2 className='form-Total'>Total: ${total}</h2>
+      </label>
       <input
         type='text'
         placeholder='Nombre'
         name='name'
         onChange={saveData}
+        pattern='[A-Za-z]{}'
         className='form-Input'
       />
       <input
         type='email'
         placeholder='Direccion E-mail'
+        name='email'
+        onChange={saveData}
+        className='form-Input'
+      />
+      <input
+        type='email'
+        placeholder='Repetir La Direccion E-mail'
         name='email'
         onChange={saveData}
         className='form-Input'

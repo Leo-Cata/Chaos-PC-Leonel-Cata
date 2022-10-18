@@ -1,0 +1,23 @@
+@import "../../scss/_variables";
+
+.notFound{
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 39px);
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+}
+.notFound-Icon{
+  font-size: 10rem;
+  margin: 0 auto;
+}
+.notFound-Text{
+  font-family: $font;
+  font-size: 3rem;
+}
+
+.notFound-Button{
+  @extend .button-Styles;
+  margin: 1rem auto;
+}
