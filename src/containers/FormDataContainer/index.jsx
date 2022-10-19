@@ -6,6 +6,7 @@ import { db } from '../../firebase/config';
 
 import { CartCont } from '../../context/CartContext';
 import generateOrder from '../../services/generateOrder';
+import Loading from '../../components/Loading';
 
 import './styles.scss';
 
@@ -22,6 +23,9 @@ const FormData = () => {
     items: cart,
     total: total,
   });
+
+  const [processingBuy, setProcessingBuy] = useState(false);
+
   const saveData = (element) => {
     //spread orderData, get the name of elemented targeted(for name="name" will set name, for name="email" will set email) and get the value of those inputs, then save it
     setOrderData({ ...orderData, [element.target.name]: element.target.value });
@@ -29,7 +33,8 @@ const FormData = () => {
 
   const handleBuy = async (element) => {
     element.preventDefault();
-    if (cart.length) {
+    if (cart.length && orderData.name && orderData.email && orderData.phone) {
+      setProcessingBuy(true);
       const order = generateOrder(
         orderData.name,
         orderData.email,
@@ -74,8 +79,10 @@ const FormData = () => {
           },
         });
       })();
+      setProcessingBuy(false);
+
       nav('/');
-    } else {
+    } else if (!cart.length) {
       (() => {
         Swal.fire({
           icon: 'error',
@@ -86,10 +93,23 @@ const FormData = () => {
           },
         });
       })();
+    } else {
+      (() => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Llena Los Datos Antes De Continuar',
+          customClass: {
+            container: 'swal-Container',
+            title: 'swal-Title',
+          },
+        });
+      })();
     }
   };
 
-  return (
+  return processingBuy ? (
+    <Loading />
+  ) : (
     <form onSubmit={handleBuy} className='form'>
       <label>
         <h2 className='form-Title'>
