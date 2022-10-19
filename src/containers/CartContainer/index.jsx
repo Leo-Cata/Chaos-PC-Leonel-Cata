@@ -1,7 +1,8 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import CartItem from '../../components/CartItem';
+
 import { CartCont } from '../../context/CartContext';
 
 import './styles.scss';

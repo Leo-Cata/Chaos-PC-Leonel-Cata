@@ -1,9 +1,11 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { TiShoppingCart } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
+
 import { CartCont } from '../../context/CartContext';
+
 import './style.scss';
+
 const CartWidget = () => {
   //get nav hook
   const nav = useNavigate();

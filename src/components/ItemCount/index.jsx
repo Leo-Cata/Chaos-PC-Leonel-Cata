@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import './style.scss';
+
 import Swal from 'sweetalert2';
+
+import './style.scss';
+
 //gets product, on add and initial from props
 const ItemCount = ({ product, onAdd, initial }) => {
   //state to save qty of items

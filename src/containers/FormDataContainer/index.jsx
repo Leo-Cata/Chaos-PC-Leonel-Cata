@@ -1,10 +1,14 @@
-import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CartCont } from '../../context/CartContext';
+
+import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+
+import { CartCont } from '../../context/CartContext';
 import generateOrder from '../../services/generateOrder';
+
 import './styles.scss';
+
 import Swal from 'sweetalert2';
 
 const FormData = () => {

@@ -1,7 +1,9 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+
 import { TbError404 } from 'react-icons/tb';
+
 import { CartCont } from '../../context/CartContext';
+
 import './styles.scss';
 
 const NotFound = () => {
